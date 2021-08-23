@@ -1,0 +1,21 @@
+.big_section {
+  background-color: grey;
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.left {
+    left: 0;
+    background-color: rgb(96, 111, 245);
+  }
+  
+  .right {
+    right: 0;
+    background-color: red;
+  }
