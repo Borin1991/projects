@@ -1,7 +1,7 @@
 .big_section {
   background-color: grey;
   height: 100%;
-  width: 30%;
+  width: 45%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -12,10 +12,12 @@
 
 .left {
     left: 0;
-    background-color: rgb(96, 111, 245);
+    background-color: rgb(216, 217, 230);
+    text-align: center;
   }
   
   .right {
     right: 0;
-    background-color: red;
+    background-color: rgb(231, 224, 224);
+    text-align: center;
   }
