@@ -5,7 +5,7 @@
   position: fixed;
   z-index: 1;
   top: 0;
-  overflow-x: hidden;
+  overflow-x: hidden; 
   padding-top: 20px;
   padding-left: 10px;
 }
@@ -25,4 +25,22 @@
   #remaining_score, #remaining_score_p2 {
     font-size: 70px;
     margin-top: 5px;
+    margin-bottom: 15px;
   }
+
+#checkout_options {
+  background-color: yellow;
+  position: relative;
+  width: 50%;  
+  left: 25%;
+  right: 25%;
+}
+
+#best_throw, #best_throw_p2, #average_throw, #average_throw_p2 {
+  position: relative;
+  width: 40%;  
+  left: 30%;
+  right: 30%;
+  border-style: solid;
+  border-color: gray;
+}

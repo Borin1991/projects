@@ -4,6 +4,8 @@ var your_throw;
 var your_throw_p2;
 var throws_array = []; 
 var throws_array_p2 = [];
+var rem_scores_array = [501];
+var rem_scores_array_p2 = [];
 var max_throw = 0;
 var max_throw_p2 = 0;
 
@@ -115,7 +117,7 @@ var checkout_array = [ {checkout_score:2 , checkout_text: 'D1'},
 ];
 var display_checkout = "no checkouts";
 var display_checkout_p2 = "no checkouts";
-
+var test_array = [501];
 
 
 function testFunction() {
@@ -169,17 +171,23 @@ function testFunction() {
   rem_score = rem_score - your_throw; 
 
   //push new throw in the array   
-  throws_array.push(your_throw);   
+  throws_array.push(your_throw); 
+  rem_scores_array.push(rem_score);  
+  test_array.push(rem_score + " (" + your_throw + ")");
+  console.log(test_array);
 
   //checkouts
   var i = checkout_array.length;
   while (i--) {
     if(rem_score==checkout_array[i].checkout_score) {
-      display_checkout = checkout_array[i].checkout_text;      
+      display_checkout = checkout_array[i].checkout_text;  
+      document.getElementById("checkout_options").style.visibility="visible";
+      document.getElementById("checkout_options").innerHTML = display_checkout; //show checkout in html    
     }        
   };   
   if(no_checkout_array.includes(rem_score)){    
     display_checkout = 'no checkouts';
+    
   }  
 
   //calculate average  
@@ -197,14 +205,15 @@ function testFunction() {
    max_throw = your_throw;
   };
 
-  // updating the HTML
-  document.getElementById("all_throws").innerHTML = throws_array.join(" / ");
-  document.getElementById("average_throw").innerHTML = avg.toFixed(2); 
+  //// updating the HTML
+  //document.getElementById("all_throws").innerHTML = throws_array.join(" / ");
+  //document.getElementById("rem_score_array").innerHTML = rem_scores_array.join("  (" + your_throw + ")"+" <p> </p> ");
+  document.getElementById("rem_score_array").innerHTML = test_array.join("<p> </p>");
+  document.getElementById("average_throw").innerHTML = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVG. " + avg.toFixed(2); 
   document.getElementById("remaining_score").innerHTML =  rem_score.toString(); //update value in HTML
-  document.getElementById("last_throw").innerHTML = your_throw; //update value in HTML
-  document.getElementById('rob_Display').value=''; //clear the input field    
-  document.getElementById("checkout_options").innerHTML = display_checkout; //show checkout in html
-  document.getElementById("best_throw").innerHTML = max_throw;
+  //document.getElementById("last_throw").innerHTML = your_throw; //update value in HTML
+  document.getElementById('rob_Display').value=''; //clear the input field      
+  document.getElementById("best_throw").innerHTML = "Max. " + max_throw;
 
 };
 
