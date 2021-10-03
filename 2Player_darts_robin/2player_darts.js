@@ -5,7 +5,7 @@ var your_throw_p2;
 var throws_array = []; 
 var throws_array_p2 = [];
 var rem_scores_array = [501];
-var rem_scores_array_p2 = [];
+var rem_scores_array_p2 = [501];
 var max_throw = 0;
 var max_throw_p2 = 0;
 
@@ -118,6 +118,7 @@ var checkout_array = [ {checkout_score:2 , checkout_text: 'D1'},
 var display_checkout = "no checkouts";
 var display_checkout_p2 = "no checkouts";
 var test_array = [501];
+var test_array_p2=[501];
 
 
 function testFunction() {
@@ -186,8 +187,7 @@ function testFunction() {
     }        
   };   
   if(no_checkout_array.includes(rem_score)){    
-    display_checkout = 'no checkouts';
-    
+    display_checkout = 'no checkouts';    
   }  
 
   //calculate average  
@@ -214,7 +214,6 @@ function testFunction() {
   //document.getElementById("last_throw").innerHTML = your_throw; //update value in HTML
   document.getElementById('rob_Display').value=''; //clear the input field      
   document.getElementById("best_throw").innerHTML = "Max. " + max_throw;
-
 };
 
 
@@ -267,16 +266,20 @@ function testFunction_p2() {
 
   //substract throw from remaining score  
   rem_score_p2 = rem_score_p2 - your_throw_p2; 
-  
 
   //push new throw in the array   
-  throws_array_p2.push(your_throw_p2);   
+  throws_array_p2.push(your_throw_p2);
+  rem_scores_array_p2.push(rem_score_p2);  
+  test_array_p2.push(rem_score_p2 + " (" + your_throw_p2 + ")");
+  console.log(test_array_p2);   
 
   //checkouts
   var i = checkout_array.length;
   while (i--) {
     if(rem_score_p2==checkout_array[i].checkout_score) {
-      display_checkout_p2 = checkout_array[i].checkout_text;      
+      display_checkout_p2 = checkout_array[i].checkout_text;    
+      document.getElementById("checkout_options_p2").style.visibility="visible";
+      document.getElementById("checkout_options_p2").innerHTML = display_checkout_p2; //show checkout in html      
     }        
   };   
   if(no_checkout_array.includes(rem_score_p2)){    
@@ -289,22 +292,20 @@ function testFunction_p2() {
     sum_p2 += parseInt(throws_array_p2[i]);
   }      
   var avg_p2 = 0.00;
-  avg_p2 = sum_p2 / throws_array_p2.length;
-
-  //console.log("amount of throws " + throws_array.length);
+  avg_p2 = sum_p2 / throws_array_p2.length;  
 
   // max throw
   if (parseInt(your_throw_p2)>parseInt(max_throw_p2)){
    max_throw_p2 = your_throw_p2;
-  };
+  };  
 
-  // updating the HTML
-  document.getElementById("all_throws_p2").innerHTML = throws_array_p2.join(" / ");
-  document.getElementById("average_throw_p2").innerHTML = avg_p2.toFixed(2);   
+  // updating the HTML  
+  document.getElementById("average_throw_p2").innerHTML = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVG. " + avg_p2.toFixed(2);   
   document.getElementById("remaining_score_p2").innerHTML =  rem_score_p2.toString(); //update value in HTML
-  document.getElementById("last_throw_p2").innerHTML = your_throw_p2; //update value in HTML
-  document.getElementById('rob_Display_p2').value=''; //clear the input field    
-  document.getElementById("checkout_options_p2").innerHTML = display_checkout_p2; //show checkout in html
-  document.getElementById("best_throw_p2").innerHTML = max_throw_p2;
-
+  document.getElementById("rem_score_array_p2").innerHTML = test_array_p2.join("<p> </p>");  
+  document.getElementById('rob_Display_p2').value=''; //clear the input field      
+  document.getElementById("best_throw_p2").innerHTML = "Max. " + max_throw_p2;
+  //document.getElementById("all_throws_p2").innerHTML = throws_array_p2.join(" / ");
+  //document.getElementById("last_throw_p2").innerHTML = your_throw_p2; //update value in HTML
+  //document.getElementById("checkout_options_p2").innerHTML = display_checkout_p2; //show checkout in html
 };

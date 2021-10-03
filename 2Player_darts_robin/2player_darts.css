@@ -28,7 +28,7 @@
     margin-bottom: 15px;
   }
 
-#checkout_options {
+#checkout_options, #checkout_options_p2 {
   background-color: yellow;
   position: relative;
   width: 50%;  
