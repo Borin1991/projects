@@ -12,10 +12,10 @@ var max_throw_p2 = 0;
 var impossible_array = ['163','166','169','172','173','175','176','178','179'];
 var no_checkout_array = [169, 168, 166, 165, 163, 162, 159];
 var checkout_array = [ {checkout_score:2 , checkout_text: 'D1'},
-{checkout_score: 2 , checkout_text: 'D1'},
-{checkout_score: 3 , checkout_text: '1 D1'},
-{checkout_score: 4 , checkout_text: 'D2'},
-{checkout_score: 5 , checkout_text: '1 D2 // 3 D1'},
+{checkout_score: 2 , checkout_text: 'D1', audio_storage: './my_audiofiles/five_throw.m4a'},
+{checkout_score: 3 , checkout_text: '1 D1', audio_storage: './my_audiofiles/five_throw.m4a'},
+{checkout_score: 4 , checkout_text: 'D2', audio_storage: './my_audiofiles/five_throw.m4a'},
+{checkout_score: 5 , checkout_text: '1 D2 // 3 D1' , audio_storage: './my_audiofiles/five_throw.m4a'},
 {checkout_score: 6 , checkout_text: 'D3'},
 {checkout_score: 7 , checkout_text: '3 D2 // many other options'},
 {checkout_score: 8 , checkout_text: 'D4'},
@@ -26,33 +26,33 @@ var checkout_array = [ {checkout_score:2 , checkout_text: 'D1'},
 {checkout_score: 13 , checkout_text: '5 D4 // many other options'},
 {checkout_score: 14 , checkout_text: 'D7'},
 {checkout_score: 15 , checkout_text: '7 D4 // many other options'},
-{checkout_score:  16 , checkout_text: 'D8'},
+{checkout_score: 16 , checkout_text: 'D8'},
 {checkout_score: 17 , checkout_text: '1 D8 // many other options'},
 {checkout_score: 18 , checkout_text: 'D9'},
 {checkout_score: 19 , checkout_text: '3 D8 // many other options'},
-{checkout_score:  20 , checkout_text: 'D10'},
+{checkout_score: 20 , checkout_text: 'D10'},
 {checkout_score: 21 , checkout_text: '5 D8 // many other options'},
 {checkout_score: 22 , checkout_text: 'D11'},
 {checkout_score: 23 , checkout_text: '7 D8 // many other options'},
-{checkout_score:  24 , checkout_text: 'D12'},
+{checkout_score: 24 , checkout_text: 'D12'},
 {checkout_score: 25 , checkout_text: '9 D8 // many other options'},
 {checkout_score: 26 , checkout_text: 'D13'},
 {checkout_score: 27 , checkout_text: '11 D8 // many other options'},
-{checkout_score:  28 , checkout_text: 'D14'},
+{checkout_score: 28 , checkout_text: 'D14'},
 {checkout_score: 29 , checkout_text: '13 D8 // many other options'},
 {checkout_score: 30 , checkout_text: 'D15'},
 {checkout_score: 31 , checkout_text: '15 D8 // many other options'},
-{checkout_score:  32 , checkout_text: 'D16'},
+{checkout_score: 32 , checkout_text: 'D16'},
 {checkout_score: 33 , checkout_text: '1 D16 // many other options'},
 {checkout_score: 34 , checkout_text: 'D17'},
 {checkout_score: 35 , checkout_text: '3 D16 // many other options'},
-{checkout_score:  36 , checkout_text: 'D18'},
+{checkout_score: 36 , checkout_text: 'D18'},
 {checkout_score: 37 , checkout_text: '5 D16 // many other options'},
 {checkout_score: 38 , checkout_text: 'D19'},
 {checkout_score: 39 , checkout_text: '7 D16 // many other options'},
-{checkout_score:  40 , checkout_text: 'D20'},
+{checkout_score: 40 , checkout_text: 'D20'},
 {checkout_score: 41 , checkout_text: '9 D16 || 1 D20'},
-{checkout_score:  42 , checkout_text: '10 D16  //  6 D18'},{checkout_score:
+{checkout_score: 42 , checkout_text: '10 D16  //  6 D18'},{checkout_score:
   43 , checkout_text: '11 D16  //  3 D20  //  19 D12'},{checkout_score:  44 , checkout_text: '4 D20  //  12 D16'},{checkout_score:
   45 , checkout_text: '5 D20  //  13 D16  //  9 D18'},{checkout_score:  46 , checkout_text: '6 D20  //  10 D18'},{checkout_score:
   47 , checkout_text: '15 D16  //  11 D18  //  7 D20'},{checkout_score:  48 , checkout_text: '8 D20  //  16 D16'},{checkout_score:
@@ -115,16 +115,27 @@ var checkout_array = [ {checkout_score:2 , checkout_text: 'D1'},
   164 , checkout_text: 'T20 T18 BULL'},{checkout_score:  167 , checkout_text: 'T20 T19 BULL'},{checkout_score:
   170 , checkout_text: 'T20 T20 BULL'}
 ];
+var audio_array = ['nothing1', 'nothing2','nothing3','nothing4','./my_audiofiles/five_throw.m4a'];
 var display_checkout = "no checkouts";
 var display_checkout_p2 = "no checkouts";
 var test_array = [501];
 var test_array_p2=[501];
 
-
 function testFunction() {
-    
+  console.log("testing1");
     //capture input field value
     your_throw = document.getElementById('rob_Display').value; 
+
+    //audio finding the file      
+      var to_get_audio = your_throw - 1;
+      var get_audio = audio_array[to_get_audio];     
+      var audio_location = get_audio;
+      console.log("the audio_location value is " + audio_location);
+
+    //execute audio
+    var audio = new Audio(audio_location);
+    audio.play();
+    
 
          //more than 180
          if(your_throw > 180) {
