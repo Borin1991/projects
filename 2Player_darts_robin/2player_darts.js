@@ -11,11 +11,11 @@ var max_throw_p2 = 0;
 
 var impossible_array = ['163','166','169','172','173','175','176','178','179'];
 var no_checkout_array = [169, 168, 166, 165, 163, 162, 159];
-var checkout_array = [ {checkout_score:2 , checkout_text: 'D1'},
-{checkout_score: 2 , checkout_text: 'D1', audio_storage: './my_audiofiles/five_throw.m4a'},
-{checkout_score: 3 , checkout_text: '1 D1', audio_storage: './my_audiofiles/five_throw.m4a'},
-{checkout_score: 4 , checkout_text: 'D2', audio_storage: './my_audiofiles/five_throw.m4a'},
-{checkout_score: 5 , checkout_text: '1 D2 // 3 D1' , audio_storage: './my_audiofiles/five_throw.m4a'},
+var checkout_array = [ {checkout_score:1 , checkout_text: 'D1'},
+{checkout_score: 2 , checkout_text: 'D1'},
+{checkout_score: 3 , checkout_text: '1 D1'},
+{checkout_score: 4 , checkout_text: 'D2'},
+{checkout_score: 5 , checkout_text: '1 D2 // 3 D1'},
 {checkout_score: 6 , checkout_text: 'D3'},
 {checkout_score: 7 , checkout_text: '3 D2 // many other options'},
 {checkout_score: 8 , checkout_text: 'D4'},
@@ -115,22 +115,200 @@ var checkout_array = [ {checkout_score:2 , checkout_text: 'D1'},
   164 , checkout_text: 'T20 T18 BULL'},{checkout_score:  167 , checkout_text: 'T20 T19 BULL'},{checkout_score:
   170 , checkout_text: 'T20 T20 BULL'}
 ];
-var audio_array = ['nothing1', 'nothing2','nothing3','nothing4','./my_audiofiles/five_throw.m4a'];
+var audio_array = ['./my_audiofiles/NewRecording.m4a', 
+'./my_audiofiles/New_Recording_2.m4a',
+'./my_audiofiles/New_Recording_3.m4a',
+'./my_audiofiles/New_Recording_4.m4a',
+'./my_audiofiles/New_Recording_5.m4a',
+'./my_audiofiles/NewRecording6.m4a',
+'./my_audiofiles/NewRecording7.m4a',
+'./my_audiofiles/NewRecording8.m4a',
+'./my_audiofiles/NewRecording9.m4a',
+'./my_audiofiles/NewRecording10.m4a',
+'./my_audiofiles/NewRecording11.m4a',
+'./my_audiofiles/NewRecording12.m4a',
+'./my_audiofiles/NewRecording13.m4a',
+'./my_audiofiles/NewRecording14.m4a',
+'./my_audiofiles/NewRecording15.m4a',
+'./my_audiofiles/NewRecording16.m4a',
+'./my_audiofiles/NewRecording17.m4a',
+'./my_audiofiles/NewRecording18.m4a',
+'./my_audiofiles/NewRecording19.m4a',
+'./my_audiofiles/NewRecording20.m4a',
+'./my_audiofiles/NewRecording21.m4a',
+'./my_audiofiles/NewRecording22.m4a',
+'./my_audiofiles/NewRecording23.m4a',
+'./my_audiofiles/NewRecording24.m4a',
+'./my_audiofiles/NewRecording25.m4a',
+'./my_audiofiles/NewRecording26.m4a',
+'./my_audiofiles/NewRecording27.m4a',
+'./my_audiofiles/NewRecording28.m4a',
+'./my_audiofiles/NewRecording29.m4a',
+'./my_audiofiles/NewRecording30.m4a',
+'./my_audiofiles/NewRecording31.m4a',
+'./my_audiofiles/NewRecording32.m4a',
+'./my_audiofiles/NewRecording33.m4a',
+'./my_audiofiles/NewRecording34.m4a',
+'./my_audiofiles/NewRecording35.m4a',
+'./my_audiofiles/NewRecording36.m4a',
+'./my_audiofiles/NewRecording37.m4a',
+'./my_audiofiles/NewRecording38.m4a',
+'./my_audiofiles/NewRecording39.m4a',
+'./my_audiofiles/NewRecording40.m4a',
+'./my_audiofiles/NewRecording41.m4a',
+'./my_audiofiles/NewRecording42.m4a',
+'./my_audiofiles/NewRecording43.m4a',
+'./my_audiofiles/NewRecording44.m4a',
+'./my_audiofiles/NewRecording45.m4a',
+'./my_audiofiles/NewRecording46.m4a',
+'./my_audiofiles/NewRecording47.m4a',
+'./my_audiofiles/NewRecording48.m4a',
+'./my_audiofiles/NewRecording49.m4a',
+'./my_audiofiles/NewRecording50.m4a',
+'./my_audiofiles/NewRecording51.m4a',
+'./my_audiofiles/NewRecording52.m4a',
+'./my_audiofiles/NewRecording53.m4a',
+'./my_audiofiles/NewRecording54.m4a',
+'./my_audiofiles/NewRecording55.m4a',
+'./my_audiofiles/NewRecording56.m4a',
+'./my_audiofiles/NewRecording57.m4a',
+'./my_audiofiles/NewRecording58.m4a',
+'./my_audiofiles/NewRecording59.m4a',
+'./my_audiofiles/NewRecording60.m4a',
+'./my_audiofiles/NewRecording61.m4a',
+'./my_audiofiles/NewRecording62.m4a',
+'./my_audiofiles/NewRecording63.m4a',
+'./my_audiofiles/NewRecording64.m4a',
+'./my_audiofiles/NewRecording65.m4a',
+'./my_audiofiles/NewRecording66.m4a',
+'./my_audiofiles/NewRecording67.m4a',
+'./my_audiofiles/NewRecording68.m4a',
+'./my_audiofiles/NewRecording69.m4a',
+'./my_audiofiles/NewRecording70.m4a',
+'./my_audiofiles/NewRecording71.m4a',
+'./my_audiofiles/NewRecording72.m4a',
+'./my_audiofiles/NewRecording73.m4a',
+'./my_audiofiles/NewRecording74.m4a',
+'./my_audiofiles/NewRecording75.m4a',
+'./my_audiofiles/NewRecording76.m4a',
+'./my_audiofiles/NewRecording77.m4a',
+'./my_audiofiles/NewRecording78.m4a',
+'./my_audiofiles/NewRecording79.m4a',
+'./my_audiofiles/NewRecording80.m4a',
+'./my_audiofiles/NewRecording81.m4a',
+'./my_audiofiles/NewRecording82.m4a',
+'./my_audiofiles/NewRecording83.m4a',
+'./my_audiofiles/NewRecording84.m4a',
+'./my_audiofiles/NewRecording85.m4a',
+'./my_audiofiles/NewRecording86.m4a',
+'./my_audiofiles/NewRecording87.m4a',
+'./my_audiofiles/NewRecording88.m4a',
+'./my_audiofiles/NewRecording89.m4a',
+'./my_audiofiles/NewRecording90.m4a',
+'./my_audiofiles/NewRecording91.m4a',
+'./my_audiofiles/NewRecording92.m4a',
+'./my_audiofiles/NewRecording93.m4a',
+'./my_audiofiles/NewRecording94.m4a',
+'./my_audiofiles/NewRecording95.m4a',
+'./my_audiofiles/NewRecording96.m4a',
+'./my_audiofiles/NewRecording97.m4a',
+'./my_audiofiles/NewRecording98.m4a',
+'./my_audiofiles/NewRecording99.m4a',
+'./my_audiofiles/NewRecording100.m4a',
+'./my_audiofiles/NewRecording101.m4a',
+'./my_audiofiles/NewRecording102.m4a',
+'./my_audiofiles/NewRecording103.m4a',
+'./my_audiofiles/NewRecording104.m4a',
+'./my_audiofiles/NewRecording105.m4a',
+'./my_audiofiles/NewRecording106.m4a',
+'./my_audiofiles/NewRecording107.m4a',
+'./my_audiofiles/NewRecording108.m4a',
+'./my_audiofiles/NewRecording109.m4a',
+'./my_audiofiles/NewRecording110.m4a',
+'./my_audiofiles/NewRecording111.m4a',
+'./my_audiofiles/NewRecording112.m4a',
+'./my_audiofiles/NewRecording113.m4a',
+'./my_audiofiles/NewRecording114.m4a',
+'./my_audiofiles/NewRecording115.m4a',
+'./my_audiofiles/NewRecording116.m4a',
+'./my_audiofiles/NewRecording117.m4a',
+'./my_audiofiles/NewRecording118.m4a',
+'./my_audiofiles/NewRecording119.m4a',
+'./my_audiofiles/NewRecording120.m4a',
+'./my_audiofiles/NewRecording121.m4a',
+'./my_audiofiles/NewRecording122.m4a',
+'./my_audiofiles/NewRecording123.m4a',
+'./my_audiofiles/NewRecording124.m4a',
+'./my_audiofiles/NewRecording125.m4a',
+'./my_audiofiles/NewRecording126.m4a',
+'./my_audiofiles/NewRecording127.m4a',
+'./my_audiofiles/NewRecording128.m4a',
+'./my_audiofiles/NewRecording129.m4a',
+'./my_audiofiles/NewRecording130.m4a',
+'./my_audiofiles/NewRecording131.m4a',
+'./my_audiofiles/NewRecording132.m4a',
+'./my_audiofiles/NewRecording133.m4a',
+'./my_audiofiles/NewRecording134.m4a',
+'./my_audiofiles/NewRecording135.m4a',
+'./my_audiofiles/NewRecording136.m4a',
+'./my_audiofiles/NewRecording137.m4a',
+'./my_audiofiles/NewRecording138.m4a',
+'./my_audiofiles/NewRecording139.m4a',
+'./my_audiofiles/NewRecording140.m4a',
+'./my_audiofiles/NewRecording141.m4a',
+'./my_audiofiles/NewRecording142.m4a',
+'./my_audiofiles/NewRecording143.m4a',
+'./my_audiofiles/NewRecording144.m4a',
+'./my_audiofiles/NewRecording145.m4a',
+'./my_audiofiles/NewRecording146.m4a',
+'./my_audiofiles/NewRecording147.m4a',
+'./my_audiofiles/NewRecording148.m4a',
+'./my_audiofiles/NewRecording149.m4a',
+'./my_audiofiles/NewRecording150.m4a',
+'./my_audiofiles/NewRecording151.m4a',
+'./my_audiofiles/NewRecording152.m4a',
+'./my_audiofiles/NewRecording153.m4a',
+'./my_audiofiles/NewRecording154.m4a',
+'./my_audiofiles/NewRecording155.m4a',
+'./my_audiofiles/NewRecording156.m4a',
+'./my_audiofiles/NewRecording157.m4a',
+'./my_audiofiles/NewRecording158.m4a',
+'./my_audiofiles/NewRecording159.m4a',
+'./my_audiofiles/NewRecording160.m4a',
+'./my_audiofiles/NewRecording161.m4a',
+'./my_audiofiles/NewRecording162.m4a',
+'./my_audiofiles/NewRecording163.m4a',
+'./my_audiofiles/NewRecording164.m4a',
+'./my_audiofiles/NewRecording165.m4a',
+'./my_audiofiles/NewRecording166.m4a',
+'./my_audiofiles/NewRecording167.m4a',
+'./my_audiofiles/NewRecording168.m4a',
+'./my_audiofiles/NewRecording169.m4a',
+'./my_audiofiles/NewRecording170.m4a',
+'./my_audiofiles/NewRecording171.m4a',
+'./my_audiofiles/NewRecording172.m4a',
+'./my_audiofiles/NewRecording173.m4a',
+'./my_audiofiles/NewRecording174.m4a',
+'./my_audiofiles/NewRecording175.m4a',
+'./my_audiofiles/NewRecording176.m4a',
+'./my_audiofiles/NewRecording177.m4a',
+'./my_audiofiles/NewRecording178.m4a',
+'./my_audiofiles/NewRecording179.m4a',
+'./my_audiofiles/NewRecording180.m4a',
+];
 var display_checkout = "no checkouts";
 var display_checkout_p2 = "no checkouts";
 var test_array = [501];
 var test_array_p2=[501];
 
-function testFunction() {
-  console.log("testing1");
+function testFunction() {  
     //capture input field value
     your_throw = document.getElementById('rob_Display').value; 
 
     //audio finding the file      
       var to_get_audio = your_throw - 1;
       var get_audio = audio_array[to_get_audio];     
-      var audio_location = get_audio;
-      console.log("the audio_location value is " + audio_location);
+      var audio_location = get_audio;      
 
     //execute audio
     var audio = new Audio(audio_location);
@@ -232,8 +410,17 @@ function testFunction_p2() {
     
     //capture input field value
     your_throw_p2 = document.getElementById('rob_Display_p2').value; 
+   
+    //audio finding the file      
+          var to_get_audio = your_throw_p2 - 1;
+          var get_audio = audio_array[to_get_audio];             
+          var audio_location = get_audio;      
     
-         //more than 180
+    //execute audio
+        var audio = new Audio(audio_location);
+        audio.play();
+    
+    //more than 180
          if(your_throw_p2 > 180) {
             alert('Score cannot be higher than 180');
             return;
