@@ -4,6 +4,7 @@ Darts Project for 2 players - 501
 - display checkouts
 - display Max throw
 - display average
+- Audio for all possible scores
 - Validation for incorrect input
   - more than 180
   - impossible throw with 3 darts
