@@ -1,6 +1,7 @@
 var rem_score = 501;
 var rem_score_p2 = 501;
 var your_throw;
+var your_throw_text='';
 var your_throw_p2;
 var throws_array = []; 
 var throws_array_p2 = [];
@@ -115,6 +116,7 @@ var checkout_array = [ {checkout_score:1 , checkout_text: 'D1'},
   164 , checkout_text: 'T20 T18 BULL'},{checkout_score:  167 , checkout_text: 'T20 T19 BULL'},{checkout_score:
   170 , checkout_text: 'T20 T20 BULL'}
 ];
+
 var audio_array = ['./my_audiofiles/NewRecording.m4a', 
 './my_audiofiles/New_Recording_2.m4a',
 './my_audiofiles/New_Recording_3.m4a',
@@ -301,61 +303,69 @@ var display_checkout_p2 = "no checkouts";
 var test_array = [501];
 var test_array_p2=[501];
 
+function displayALL(HTMLButtonElement){            
+  your_throw_text += (HTMLButtonElement.getAttribute("data-num")); //value ophalen  
+  document.getElementById("rob_Display").value=your_throw_text; //display value in box  
+};
+
+function undo_button(HTMLButtonElement){
+  your_throw_text = your_throw_text.substring(0, your_throw_text.length - 1); //cutting last digit  
+  document.getElementById("rob_Display").value=your_throw_text;
+};
+
 function testFunction() {  
-    //capture input field value
+  //capture input field value
     your_throw = document.getElementById('rob_Display').value; 
 
-    //audio finding the file      
+  //audio finding the file      
       var to_get_audio = your_throw - 1;
       var get_audio = audio_array[to_get_audio];     
       var audio_location = get_audio;      
 
-    //execute audio
+  //execute audio
     var audio = new Audio(audio_location);
     audio.play();
     
-
-         //more than 180
-         if(your_throw > 180) {
-            alert('Score cannot be higher than 180');
-            return;
-          }
-         //negatives
-         if(your_throw < 0) {
-            alert('No negative scores');
-            return;
-          }
-         //empty check
-          if(!your_throw) {
-            alert('please fill in a value');
-            return;
-          }
-          //isNaN
-          if(isNaN(your_throw)) {
-            alert('This is not a number');
-            return;
-          }
-          //final negative
-          if(your_throw>rem_score){
-            alert('KAPOT');
-            return;
-          }
-          //impossible throws 3 darts
-          if(impossible_array.includes(your_throw)){
-            alert('IMPOSSIBLE THROW');
-            return;
-          }
-          //no decimals
-          if(your_throw % 1 != 0){
-            alert('No decimals');
-            return;
-          }
-          //don't end in 1
-          if(parseInt(rem_score)-parseInt(your_throw)==1){
-            alert ('Remaining score can not be 1');
-            return;
-          }
-
+  //more than 180
+  if(your_throw > 180) {
+    alert('Score cannot be higher than 180');
+    return;
+  }
+ //negatives
+ if(your_throw < 0) {
+    alert('No negative scores');
+    return;
+  }
+ //empty check
+  if(!your_throw) {
+    alert('please fill in a value');
+    return;
+  }
+  //isNaN
+  if(isNaN(your_throw)) {
+    alert('This is not a number');
+    return;
+  }
+  //final negative
+  if(your_throw>rem_score){
+    alert('KAPOT');
+    return;
+  }
+  //impossible throws 3 darts
+  if(impossible_array.includes(your_throw)){
+    alert('IMPOSSIBLE THROW');
+    return;
+  }
+  //no decimals
+  if(your_throw % 1 != 0){
+    alert('No decimals');
+    return;
+  }
+  //don't end in 1
+  if(parseInt(rem_score)-parseInt(your_throw)==1){
+    alert ('Remaining score can not be 1');
+    return;
+  }
 
   //substract throw from remaining score
   rem_score = rem_score - your_throw; 
@@ -394,6 +404,9 @@ function testFunction() {
    max_throw = your_throw;
   };
 
+  //empty the box again
+  your_throw_text='';
+
   //// updating the HTML
   //document.getElementById("all_throws").innerHTML = throws_array.join(" / ");
   //document.getElementById("rem_score_array").innerHTML = rem_scores_array.join("  (" + your_throw + ")"+" <p> </p> ");
@@ -402,7 +415,7 @@ function testFunction() {
   document.getElementById("remaining_score").innerHTML =  rem_score.toString(); //update value in HTML
   //document.getElementById("last_throw").innerHTML = your_throw; //update value in HTML
   document.getElementById('rob_Display').value=''; //clear the input field      
-  document.getElementById("best_throw").innerHTML = "Max. " + max_throw;
+  document.getElementById("best_throw").innerHTML = "Best " + max_throw;
 };
 
 
@@ -502,7 +515,7 @@ function testFunction_p2() {
   document.getElementById("remaining_score_p2").innerHTML =  rem_score_p2.toString(); //update value in HTML
   document.getElementById("rem_score_array_p2").innerHTML = test_array_p2.join("<p> </p>");  
   document.getElementById('rob_Display_p2').value=''; //clear the input field      
-  document.getElementById("best_throw_p2").innerHTML = "Max. " + max_throw_p2;
+  document.getElementById("best_throw_p2").innerHTML = "Best " + max_throw_p2;
   //document.getElementById("all_throws_p2").innerHTML = throws_array_p2.join(" / ");
   //document.getElementById("last_throw_p2").innerHTML = your_throw_p2; //update value in HTML
   //document.getElementById("checkout_options_p2").innerHTML = display_checkout_p2; //show checkout in html
