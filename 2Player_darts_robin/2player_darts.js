@@ -2,6 +2,7 @@ var rem_score = 501;
 var rem_score_p2 = 501;
 var your_throw;
 var your_throw_text='';
+var your_throw_text2='';
 var your_throw_p2;
 var throws_array = []; 
 var throws_array_p2 = [];
@@ -117,7 +118,8 @@ var checkout_array = [ {checkout_score:1 , checkout_text: 'D1'},
   170 , checkout_text: 'T20 T20 BULL'}
 ];
 
-var audio_array = ['./my_audiofiles/NewRecording.m4a', 
+var audio_array = [ './my_audiofiles/NewRecording0.m4a',
+'./my_audiofiles/NewRecording.m4a', 
 './my_audiofiles/New_Recording_2.m4a',
 './my_audiofiles/New_Recording_3.m4a',
 './my_audiofiles/New_Recording_4.m4a',
@@ -307,10 +309,17 @@ function displayALL(HTMLButtonElement){
   your_throw_text += (HTMLButtonElement.getAttribute("data-num")); //value ophalen  
   document.getElementById("rob_Display").value=your_throw_text; //display value in box  
 };
-
-function undo_button(HTMLButtonElement){
+function displayALL2(HTMLButtonElement){            
+  your_throw_text2 += (HTMLButtonElement.getAttribute("data-num"));   
+  document.getElementById("rob_Display_p2").value=your_throw_text2; 
+};
+function undo_button(){
   your_throw_text = your_throw_text.substring(0, your_throw_text.length - 1); //cutting last digit  
   document.getElementById("rob_Display").value=your_throw_text;
+};
+function undo_button2(){
+  your_throw_text2 = your_throw_text2.substring(0, your_throw_text2.length - 1); //cutting last digit  
+  document.getElementById("rob_Display_p2").value=your_throw_text2;
 };
 
 function testFunction() {  
@@ -318,7 +327,7 @@ function testFunction() {
     your_throw = document.getElementById('rob_Display').value; 
 
   //audio finding the file      
-      var to_get_audio = your_throw - 1;
+      var to_get_audio = your_throw;
       var get_audio = audio_array[to_get_audio];     
       var audio_location = get_audio;      
 
@@ -425,7 +434,7 @@ function testFunction_p2() {
     your_throw_p2 = document.getElementById('rob_Display_p2').value; 
    
     //audio finding the file      
-          var to_get_audio = your_throw_p2 - 1;
+          var to_get_audio = your_throw_p2;
           var get_audio = audio_array[to_get_audio];             
           var audio_location = get_audio;      
     
@@ -509,6 +518,9 @@ function testFunction_p2() {
   if (parseInt(your_throw_p2)>parseInt(max_throw_p2)){
    max_throw_p2 = your_throw_p2;
   };  
+
+  //empty the box again
+  your_throw_text2='';
 
   // updating the HTML  
   document.getElementById("average_throw_p2").innerHTML = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVG. " + avg_p2.toFixed(2);   

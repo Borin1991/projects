@@ -39,8 +39,24 @@
         <p id="average_throw_p2">AVG. 0</p>
         <p id="best_throw_p2">Best 0</p>
         <p id="checkout_options_p2" style="visibility: hidden;">no checkouts</p>
+
+        <div id="container">  
+            <ul id="keyboard">   
+                <li class="letter" type="button" data-num="1"  onclick='displayALL2(this)'>1</li>  
+                <li class="letter" type="button" data-num="2"  onclick='displayALL2(this)'>2</li>  
+                <li class="letter" type="button" data-num="3"  onclick='displayALL2(this)'>3</li>  
+                <li class="letter clearl" type="button" data-num="4"  onclick='displayALL2(this)'>4</li>  
+                <li class="letter" type="button" data-num="5"  onclick='displayALL2(this)'>5</li>  
+                <li class="letter" type="button" data-num="6"  onclick='displayALL2(this)'>6</li>               
+                <li class="letter clearl" type="button" data-num="7"  onclick='displayALL2(this)'>7</li>  
+                <li class="letter" type="button" data-num="8"  onclick='displayALL2(this)'>8</li>  
+                <li class="letter" type="button" data-num="9"  onclick='displayALL2(this)'>9</li>  
+                <li class="letter clearl" type="button" data-num="0"  onclick='displayALL2(this)'>0</li>                    
+                <li class="delete lastitem" type="button" id="button_undo" onclick='undo_button2(this)'><</li>  
+            </ul>  
+        </div>
         
-        <input  id="rob_Display_p2" placeholder="enter your score"/>
+        <input  id="rob_Display_p2" value="" placeholder="your score"/>
         <button id="submit_score_p2" class="button" onclick="testFunction_p2()">Submit</button>
 
         <p id="rem_score_array_p2">501</p>
